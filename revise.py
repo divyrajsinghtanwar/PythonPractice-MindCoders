@@ -77,10 +77,12 @@ lst2 = [10,20,30,40,50]
 for i in range(len(lst2)):
     lst2[i] +=  1
 print(lst2)    
-'''
+
 
 lst = [10,20,30,40,50,60,70,80,90,100]
 sum = 0
 for i in range(len(lst)):
     sum += lst[i]
 print(sum)
+'''
+print("testing commit changes")
