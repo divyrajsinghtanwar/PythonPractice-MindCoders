@@ -233,4 +233,27 @@ print("var2:", var2)
 lst = [1,2,3,4,5]
 lst[2],lst[3] = lst[3],lst[2]
 print(lst)
+
+
+lst =[8,10,6,2,4]
+
+swap =True
+count = 0
+while swap:
+    swap = False
+    for i in range(len(lst)-1):
+        count+=1
+        if lst[i]>lst[i+1]:
+            swap=True
+            lst[i],lst[i+1]=lst[i+1],lst[i]
+print(lst)
+print(count)
+
+print("")
 '''
+
+lst1 = [1]
+lst = lst1[:]
+lst1[0] = 2
+print(lst1)
+print(lst)
