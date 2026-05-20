@@ -220,23 +220,21 @@ for i in range(len(lst)):
 for i in lst:         //this iterate with the elements of the list
     print(lst[i-1])
 
-
+#swapping
 var1 = 11
 var2 = 5
-
 var1 ,var2 = var2,var1
 print("var1:", var1)
 print("var2:", var2)
-
-
 
 lst = [1,2,3,4,5]
 lst[2],lst[3] = lst[3],lst[2]
 print(lst)
 
 
-lst =[8,10,6,2,4]
 
+#Bubble sort
+lst =[8,10,6,2,4]
 swap =True
 count = 0
 while swap:
@@ -250,10 +248,25 @@ print(lst)
 print(count)
 
 print("")
-'''
 
+#slice  
 lst1 = [1]
-lst = lst1[:]
+lst = lst1[:] #start:end
 lst1[0] = 2
 print(lst1)
 print(lst)
+
+lst2 = [1,2,3,4,5]
+print(lst2[1:4])
+print(lst2[:3])
+print(lst2[3:])
+print(lst2[-5:-1])
+
+del lst2[1:4]
+print(lst2)
+
+print(5 in lst2)
+print(6 in lst2)
+print(5 not in lst2)
+print(6 not in lst2)
+'''
