@@ -269,4 +269,101 @@ print(5 in lst2)
 print(6 in lst2)
 print(5 not in lst2)
 print(6 not in lst2)
+
+
+#list comprehenshion
+row =[]
+for i in range(8): 
+   row.append("white pawn")
+
+print(row)
+
+
+row= ["white pawn" for i in range(8)]
+square =[x**2 for x in range(8)]
+
+
+#2-D array
+board = []
+for i in range(8):
+    row = ["EMPtY" for i in range(8)]
+    board.append(row)
+
+for index in board:
+    print(index)    
+
+print("-----------------------------")
+
+
+board[0][0]="B Rooks"
+board[0][7]="B Rooks"
+board[7][0]="W rooks"
+board[7][7]="W rooks"
+
+board[0][1]="B knight"
+board[0][6]="B knight"
+board[7][1]="W knight"
+board[7][6]="W knight"
+
+board[0][2]="B Bishop"
+board[0][5]="B Bishop"
+board[7][2]="W Bishop"
+board[7][5]="W Bishop"
+
+board[0][3]="B king"
+board[0][4]="B Queen"
+board[7][3]="W King"
+board[7][4]="W Queen"
+
+board[1] =["B Pawn" for i in range(8)]
+board[6] =["W Pawn" for i in range(8)]
+
+
+print(board)
+
+#list list comprension
+temp = [[ 0.0 for i in range(24)]for d in range(31)]
+temp1 = 30
+temp2 = 32
+count = 0
+
+for day in temp:
+    if count ==0:
+        day[11]=temp1
+        count=1
+    else:
+        day[11] = temp2
+        count = 0 
+
+for element in temp:
+    print(element)           
+    
+total = 0.0
+for day in temp:
+    total+=day[11]
+average = total/31        
+print("avg temp temp at noon:",average)
+
+highest=-100
+for day in temp:
+    for temp in day:
+        if highest<temp:
+            highest=temp
+
+print(highest)            
+
+hot_doys = 0
+for day in temp:
 '''
+#list list list comprehension
+room =[[[False for r in range(20)] for f in  range(15)] for t in range(3)]
+print(room)
+
+room[1][9][13] = True
+room[1][9][1] = True
+
+vacant_rooms = 0
+for room_number in range(20):
+    if not room[1][9][room_number]:
+        vacant_rooms += 1
+print("Number of vacant rooms:", vacant_rooms)
