@@ -354,7 +354,7 @@ print(highest)
 
 hot_doys = 0
 for day in temp:
-'''
+
 #list list list comprehension
 room =[[[False for r in range(20)] for f in  range(15)] for t in range(3)]
 print(room)
@@ -367,3 +367,7 @@ for room_number in range(20):
     if not room[1][9][room_number]:
         vacant_rooms += 1
 print("Number of vacant rooms:", vacant_rooms)
+'''
+
+#function
+ 
