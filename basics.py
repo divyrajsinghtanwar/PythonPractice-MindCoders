@@ -367,7 +367,101 @@ for room_number in range(20):
     if not room[1][9][room_number]:
         vacant_rooms += 1
 print("Number of vacant rooms:", vacant_rooms)
-'''
+
 
 #function
+
+#function declaration
+def message():
+    print("enter value:")
+    temp = int(input())
+    return temp
+
+#function invokation
+a=message()    
+
+    
+b = message()
+
+print("a:",a)
+print("b:",b)
+
+
+def message1():
+    print("Enter a value:")
+print("we start here. ")
+#message1=1
+print(message1)#give memory address  
+message1()
+print("we end here . ")  
+
  
+ #argument - parametrized function 
+def hello(n):#parameter
+  print("hello",n)
+
+name = input("enter name:")
+hello(name) #argument-carries value
+
+def message(what ,number):
+  print("enter",what ,"number",number)
+
+message("telephone",11)
+message(11,"teephone")
+message("price",5) 
+message("number","number") 
+
+def introduction(first_name,last_name):
+  print("hello ,my name is ",first_name,last_name)
+
+introduction("luke","skywalker")
+introduction("jesse","quick")  
+
+#keyword argument passing
+introduction(first_name="james",last_name="bond")
+introduction(last_name="skywalker",first_name="luke")
+#introduction("divy",first_name="tanwer")
+introduction("divy",last_name="tanwer")
+
+
+def intro(a="james bond",b="bond"):
+  print("My name is ",b+".",a+".")
+
+intro() #use default value
+
+def add_number(a,b=2,c):#syntax error
+  print(a+b+c)
+add_number(a=1,c=3)  
+
+
+def happ_new_year(wishes = True):
+  print("three...")
+  print("two")
+  print("one")
+  if not wishes:
+    return
+  print("happ new year")
+
+happ_new_year(False)  
+
+
+#passing list as argument
+def lst_sum(lst):
+    s=0
+
+    for elem in lst:
+        s+=elem
+
+    return s
+print(lst_sum([5,4,3]))    
+'''
+
+def strange_list_fun(n):
+    strange_list=[]
+
+    for i in range(0,n):
+        strange_list.insert(0,i+1)
+        strange_list.append(i+1)
+
+    return strange_list
+print(strange_list_fun(5))
