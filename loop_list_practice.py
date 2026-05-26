@@ -159,7 +159,6 @@ if count ==len(palstr):
     print("string is palendrom:",palstr) 
 else:
     print("string is not palendrom")           
-'''
 
 # usertoreverse = input("enter string : ")
 # for i in range(len(usertoreverse)):
@@ -176,4 +175,4 @@ for i in range(len(armsno)):
 if sum == int(armsno):
     print(armsno,":is armstrong number")
 else:
-    print(armsno,":is not armstrong number")        
+    print(armsno,":is not armstrong number")        '''

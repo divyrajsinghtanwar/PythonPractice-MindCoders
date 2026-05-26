@@ -454,7 +454,6 @@ def lst_sum(lst):
 
     return s
 print(lst_sum([5,4,3]))    
-'''
 
 def strange_list_fun(n):
     strange_list=[]
@@ -465,3 +464,96 @@ def strange_list_fun(n):
 
     return strange_list
 print(strange_list_fun(5))
+
+def is_int(data):
+    if type(data)==int:
+       return True
+    elif type(data)==float:
+       return False
+    
+print(is_int(5))
+print(is_int(5.0))
+print(is_int("str"))    //None
+
+
+#scope
+def scope_test():
+    x =12   #onlyu accessible inside loop(locally)
+    print("do i know variable",varsc)
+
+varsc = 1    #accessible gobally even inside function
+scope_test()
+#print(x)    #variable not defined
+print(varsc)
+
+def mul(x):
+    var = 7 
+    return x*var
+var =3
+print(mul(7))
+
+
+#making variable globally- it extend accessiblity/scope
+def my_function():
+    global varg
+    varg=2
+    print("do i know variable",varg)
+varg=1
+my_function()
+print(varg)    #2
+
+def my_function(n):
+    print("i got:",n)
+    n+=1
+    print("I have:",n)
+var = 1
+my_function(var)
+print(var)    
+
+def my_function(my_lst1):
+    print("print #1:",my_lst1)
+    print("print #2:",my_lst2)
+    my_lst1=[0,1]
+    print("print #3:",my_lst1)
+    print("print #4:",my_lst2)
+
+my_lst2=[2,3]
+my_function(my_lst2)
+print("print #5:",my_lst2)  
+print(" ")  
+
+def my_function(my_lst_1):
+    print("print #1:",my_lst_1)
+    print("print #2:",my_lst_2)
+    del my_lst_1[0]  #pay attention 
+    print("print #3:",my_lst_1)
+    print("print #4:",my_lst_2)
+
+#Recursion
+my_lst_2=[2,3]
+my_function(my_lst_2)
+print("print #5:",my_lst_2)    
+
+
+def rec_fun(n):    
+    print(n)
+
+ 
+    if(n==0):
+        return 
+    else:
+        print("going in rec:",n)
+        rec_fun(n-1)
+        print("out of rec :",n)
+    
+rec_fun(5)
+'''
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n*fact(n-1)
+
+print(fact(5))
+    
+    
