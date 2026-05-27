@@ -547,7 +547,7 @@ def rec_fun(n):
         print("out of rec :",n)
     
 rec_fun(5)
-'''
+
 def fact(n):
     if n == 0:
         return 1
@@ -556,4 +556,120 @@ def fact(n):
 
 print(fact(5))
     
-    
+
+#tuple
+tup1 = (1,2,3,1.0,"tu")
+tup2 = (4,5,6,8)
+tup3=((2,4,6,8))
+tup4 = (1,)#for single element it is mandatory to add ,
+newtup = tup1+tup2
+t2 = tup1 * 3
+
+print(len(t2))
+print(newtup)
+print(t2)
+print(3 in tup1)
+print(10 not in tup1)
+print(type(tup1))
+print(tup4)
+
+list1=[1,2,3]
+print(type(list1))
+print(list1)
+tup = tuple(list1)
+print(type(tup))
+print(tup)
+
+tup ,tup4,tup3 = tup3,tup,tup4
+print(tup)
+print(tup3)
+print(tup4)
+
+'''
+#Dictionary
+dictionary ={
+    "cat":"chat",
+    "dog":"chien",
+    "horse":"cheval"
+}
+phone_number ={'boss':5551234567,'suzy':22657854310}
+empty_dict = {}
+
+print(dictionary)
+print(type(dictionary))
+print(phone_number)
+print(type(phone_number))
+print(empty_dict)
+print(type(empty_dict))
+
+print(dictionary['cat'])
+print(phone_number['suzy'])
+#print(dictionary['president'])
+
+
+words=['cat','lion','horse']
+
+for word in words:
+    if word in dictionary:
+        print(word,": is in dictionary ")
+    else:
+        print(word,": is not in dectionary ")
+
+#keys method in dictionary
+print(dictionary.keys()) #dict_keys(['chat','dog','horse'])
+
+for key in dictionary.keys():
+    print(key,"->",dictionary[key])
+
+#items method  
+print(dictionary.items()) #dict_item([('cat','chat)])
+for key ,value in dictionary.items():
+    print(key ,"->",value)    
+
+
+#directly value ,ethod
+print(dictionary.values()) #dict_values(['chat','chien','chavel'])
+
+for values in  dictionary.values():
+    print(values)
+
+#copy method
+pol_eng_dictionary ={
+    "zamek":"castle",
+    "woda":"water",
+    "gleba":"soil"
+}    
+print("pol_eng_dictionary:",pol_eng_dictionary)
+copy_dictionary =pol_eng_dictionary.copy()
+
+print("copy_dictionary:",copy_dictionary)
+
+#update
+pol_eng_dictionary["zamek"]="lock"
+item = pol_eng_dictionary["zamek"]
+print(item)
+print(pol_eng_dictionary)
+
+#create new key value pair
+
+phonebook = {}
+print(phonebook)
+phonebook["adam"]=34576766645
+print(phonebook)
+
+del phonebook["adam"]
+print(phonebook)
+
+#popitem() method
+pol_eng_dictionary = {"kwiqt" : "flower"}
+
+pol_eng_dictionary.update(
+    {
+        "gleba":"soil"
+    }
+)
+
+print(pol_eng_dictionary)
+
+pol_eng_dictionary.popitem()
+print(pol_eng_dictionary)
