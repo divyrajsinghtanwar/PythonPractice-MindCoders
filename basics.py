@@ -585,7 +585,7 @@ print(tup)
 print(tup3)
 print(tup4)
 
-'''
+
 #Dictionary
 dictionary ={
     "cat":"chat",
@@ -673,3 +673,33 @@ print(pol_eng_dictionary)
 
 pol_eng_dictionary.popitem()
 print(pol_eng_dictionary)
+
+'''
+
+#membership operator
+pol_log_dic ={
+    "zamek":"castle",
+    "gleba":"water",
+    "woda":"water"
+}
+
+if "zamek1 " in pol_log_dic:
+    print("yes ! zamek1 is present in dect")
+else:
+    print("No ! zamek1 is not present in the dict")    
+
+#clear method - delete all key value pair
+print(pol_log_dic)
+print(len(pol_log_dic))
+
+del pol_log_dic["zamek"]
+print(len(pol_log_dic))
+print(pol_log_dic)
+
+pol_log_dic.clear()
+print(len(pol_log_dic))
+print(pol_log_dic)
+
+#update method
+pol_log_dic.update({"nav":"div"})
+print(pol_log_dic)

@@ -55,4 +55,24 @@ for i in range(1,h+1):
 
 
         '''
-   
+student_record={}
+while True:
+    name = input("enter name : ")
+    if name == "":
+        break
+    score = int(input(f"enter ${name}'s score:"))
+
+    if score not in range(1,11):
+        break   
+    if name in student_record:
+        student_record[name]+=(score,)
+    else:
+        student_record[name]=(score,)
+    
+for name,marks in student_record.items():
+    sum = 0
+    for m in marks:
+        sum += m
+    print(name ,"average score is :",sum/len(marks))    
+
+            
