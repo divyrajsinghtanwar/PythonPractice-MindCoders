@@ -54,7 +54,7 @@ for i in range(1,h+1):
     print(" "*(h-i)+"* "*i)
 
 
-        '''
+        
 student_record={}
 while True:
     name = input("enter name : ")
@@ -75,4 +75,63 @@ for name,marks in student_record.items():
         sum += m
     print(name ,"average score is :",sum/len(marks))    
 
-            
+       
+student ={}
+
+for i in range(1,6):
+    sub = input("enter subject : ")
+    student[sub] = int(input(f'enter marks of ${sub} :'))
+print(student)    
+total=0
+failed_subject =[]
+for sub ,marks in student.items():
+    total +=marks
+    if marks<50:
+        failed_subject.append(sub)
+
+print("total : ",total)
+percentage = (total/500)*100
+print("eprcentage :",percentage)
+
+if percentage>=90:
+    print("Your grade is : A")
+elif percentage >=75:
+    print("Your grade is : B")    
+elif percentage>=50:
+    print("your grade is : c")
+else:
+    print("you are failed")
+    
+if len(failed_subject) == 0:
+    print("Result : PASS")
+
+else:
+    print("Result : FAIL")
+    print("Failed subjects :", failed_subject)    
+   
+
+Input_String = input("enter string")
+dictonary ={}
+count =0
+lst =[]
+for i in range(len(Input_String)):
+    if Input_String[i]==" ":
+        lst.append(Input_String[count:i])
+        count = i+1
+        i = count
+        continue
+print(lst)
+
+for i in range(len(lst)):
+    counter =0
+    for j in range(len(lst)):
+        if lst[i]==lst[j]:
+            counter+=1
+
+    if counter >=1:
+        dictonary[lst[i]]=(counter,)
+
+print(dictonary)        
+'''
+
+
