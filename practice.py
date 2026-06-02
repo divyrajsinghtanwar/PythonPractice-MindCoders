@@ -132,4 +132,89 @@ for i in range(len(lst)):
         dictonary[lst[i]]=(counter,)
 
 print(dictonary)        
-'''
+
+
+passkey = input("enter 8 digit passwarod : ")
+special_chars = ('!', '@', '#', '$', '%', '^', '&', '*','(', ')', '-', '_', '=', '+','[', ']', '{', '}','\\', '|',';', ':',"'", '"',',', '.', '<', '>','/', '?','`', '~')
+
+Upper_case = False
+lower_case = False
+has_digit = False
+has_eight_digit = False
+has_special_chars = False
+
+for ch in passkey:
+    if  'A' <= ch <= 'Z':
+        Upper_case = True 
+
+    elif 'a' <= ch <= 'z':
+        lower_case = True
+
+    elif ch in special_chars:
+        has_special_chars= True
+
+    elif '0'<=ch<='9':
+        has_digit=True    
+
+
+if  len(passkey)>=8 and  Upper_case and lower_case and  has_digit and has_special_chars:
+    print(f'ypur password ${passkey} is strong ')
+
+else:
+    print("require strong password")    
+
+
+
+election ={
+            "BJP":0,
+            "CONG" :0,
+            "AAP" : 0 
+}    
+
+user_list = []
+
+while True:
+    count =0
+    user = input("Enter user name :")
+    age = int(input("enter age : "))
+    if user =="" and age ==0:
+        break
+
+    elif user in user_list:
+        print("you have already vote thank you")    
+
+    elif  age>=18 and not user in user_list:
+        choice = input("enter which party you have to vote :")
+        count += 1
+        election[choice]+=1
+        user_list.append(user)
+        print("you have successfully vote")
+        continue
+
+       
+
+    else:
+        print("you are teenager")    
+
+
+
+print("Election result is",election)        '''
+
+
+employee = {
+        "emp_id":{
+        "name":"",
+        "salary":0.0,
+        "experience" : 0
+    }
+}
+
+while True : 
+    emp_id = input("enter employee id :")
+    name = input("enter employee name :")
+    salary = float(input("enter employee salary :"))
+    experience = int(input("enter employee experience :"))
+
+    if "emp_id" == 0:
+        break 
+print(employee)
