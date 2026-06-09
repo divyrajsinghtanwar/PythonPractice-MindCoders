@@ -48,7 +48,7 @@ if hasattr(example_obj,'a'):
 
 if hasattr(example_obj,'b'):
     print("b = ",example_obj.b)  
-'''
+
 #name mangling - to access hidden propert
 class Classy:
     def visible(self):
@@ -67,3 +67,39 @@ except:
     print("failed")
 
 obj._Classy__hidden()       
+
+
+def reciprocal(n):
+    try:
+        n = 1/n
+    except ZeroDivisionError:
+        print("division by zero is not possible")   
+        return None
+    except Exception as e:
+        print("an error has occured :",e)    
+        print(e.__str__)
+    else:
+        print("everything is fine")   
+        return n 
+    finally:
+        print("this will always execute ")
+
+print(reciprocal(2))
+print("------------------")
+print(reciprocal(0))    
+'''
+
+#custom exception
+class CustomError(Exception):
+    def __init__(self,message):
+        self.message = message
+
+def check_positive(n):
+    if n<0:
+        raise CustomError("the number is negative")
+    else:
+        print("the number is positive")
+
+check_positive(2)
+check_positive(-1)
+check_positive(4)

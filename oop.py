@@ -189,7 +189,7 @@ example_obj3 = ExampleClass(4)
 print(example_obj1.__dict__,example_obj1.counter)
 print(example_obj2.__dict__,example_obj2.counter)
 print(example_obj3.__dict__,example_obj3.counter)
-'''
+
 
 #private class
 class python:
@@ -243,3 +243,90 @@ string_2 = "marry is lamb"
 string_1+="lamb"
 
 print(string_1 == string_2,string_1 is string_2)
+
+#str method - to override the default string representation of an object
+class Super:
+    def __init__(self,name):
+        self.name = name
+
+    def __str__(self):
+        return "My name is " + self.name + "."
+
+class  Sub(Super):
+    def __init__(self,name):
+        #super.__init__(self,name)            
+        super().__init__(name)
+
+obj  = Sub("hana")
+print(obj)        
+
+
+#multiple inheritance
+class SuperA:
+    var_a =10
+    def fun_a(self):
+        return 11
+    
+class SuperB:
+    var_b = 20
+    def fun_b(self):
+        return 21
+
+class Sub(SuperA,SuperB):
+    pass
+
+obj = Sub()
+print(obj.var_a,obj.fun_a())
+print(obj.var_b,obj.fun_b())
+
+#multi level inheritance conflict - it goes from bottom to up 
+class SuperA:
+    var=10
+    def fun(self):
+        return 11
+    
+class SuperB(SuperA):
+    var= 20
+    def fun(self):
+        return 21
+
+class Sub(SuperB):
+    pass
+
+obj = Sub()
+print(obj.var,obj.fun())
+
+#multiple inheritance conflict - it goes from left to right
+class Left:
+    var  = "L"
+    var_left = "LL"
+    def fun (self):
+        return "Left"
+    
+class Right:
+    var = "R"
+    var_right = "RR"
+    def fun(self):
+        return "Right"
+
+class Sub(Left,Right):  #it check left class first then right class because left class is written first in the inheritance list
+    pass
+obj = Sub()
+print(obj.var,obj.var_left,obj.var_right,obj.fun())        
+'''
+#polymorphishm
+class One():
+    def do_it(self):
+        print("do it from One")
+
+    def do_anything(self):
+        self.do_it()
+
+class Two(One):
+    def do_it(self):
+        print("do it from Two")        
+
+One = One()
+Two = Two()
+One.do_anything()
+Two.do_anything()        
