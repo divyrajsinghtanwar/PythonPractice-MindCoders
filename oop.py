@@ -119,7 +119,7 @@ class sub(Super):
 obj = sub()
 print(obj.subVar)
 print(obj.supVar)
-'''
+
 #constructor chaining
 
 class Super:
@@ -165,3 +165,81 @@ print(obj.variable_1,obj.var_1,obj.fun_1())
 print(obj.variable_2,obj.var_2,obj.fun_2())
 print(obj.variable_3,obj.var_3,obj.fun_3())
 
+#class variable
+class ExampleClass:
+    counter = 0
+    def __init__(self,val = 1):
+        self.__first = val
+        if val%2!=0:
+            self.a = 1
+        else:
+            self.b = 1    
+        ExampleClass.counter +=1
+
+
+example_obj = ExampleClass(6)
+#print(example_obj.a)
+print(example_obj.b)
+
+
+example_obj1 = ExampleClass()
+example_obj2 = ExampleClass(2)
+example_obj3 = ExampleClass(4)
+
+print(example_obj1.__dict__,example_obj1.counter)
+print(example_obj2.__dict__,example_obj2.counter)
+print(example_obj3.__dict__,example_obj3.counter)
+'''
+
+#private class
+class python:
+    population=1
+    def __init__(self):
+        self.lenght_ft = 3
+        self.__venomous = False    #accesing private class
+
+myobj = python()
+print("myobj.population :",myobj.population)
+print("myobj.lenght_ft : ",myobj.lenght_ft) 
+#print("myobj.__venoums:",myobj.__venomous)
+#print("myobj.venoums:",myobj.venomous)       
+
+#but in python we can access private class by writing obj._Class_Name__Private_class
+print("myobj.__venoums:",myobj._python__venomous)
+
+
+#isinstance method
+class Vehicle:
+    pass
+class LandVehicle(Vehicle):
+    pass
+class TrackedVehicle(LandVehicle):
+    pass
+my_vehicle = Vehicle()
+my_land_vehicle = LandVehicle()
+My_tracked_vehicle =TrackedVehicle()
+
+for obj in [my_vehicle,my_land_vehicle,My_tracked_vehicle]:
+    for cls in [Vehicle,LandVehicle,TrackedVehicle]:
+        print(isinstance(obj,cls),end = "\t")
+    print()
+
+#is operator
+class SampleClass:
+    def __init__(self,val):
+        self.val = val            
+obj_1 = SampleClass(0)
+obj_2 = SampleClass(2)
+obj_3 = obj_1
+obj_3.val +=1
+
+print(obj_1 is obj_2)
+print(obj_2 is obj_3)
+print(obj_3 is obj_1)
+print(obj_1.val,obj_2.val,obj_3.val)
+
+string_1 = "marry is "
+string_2 = "marry is lamb"
+string_1+="lamb"
+
+print(string_1 == string_2,string_1 is string_2)
