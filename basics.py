@@ -674,7 +674,7 @@ print(pol_eng_dictionary)
 pol_eng_dictionary.popitem()
 print(pol_eng_dictionary)
 
-'''
+
 
 #membership operator
 pol_log_dic ={
@@ -703,3 +703,101 @@ print(pol_log_dic)
 #update method
 pol_log_dic.update({"nav":"div"})
 print(pol_log_dic)
+
+'''
+#string 
+city  = "Bhopal"
+print(city[0])
+print(city[2])
+
+print(city[-1])
+print(city[5])
+
+print(city[-3])
+print(city[3])
+
+
+#string slicing
+name = "Divyraj singh tanwer"
+print(name[0:5])
+print(name[6:11])
+print(name[:5])
+print(name[12:])
+print(name[-5:])    
+print(name[-5:-1])
+print(name[0:20:2])
+print(name[::2])
+print(name[1:20:2])
+print(name[::-1]) #reverse the string
+
+#length of string
+print(len(name))
+
+#case
+text = "Hello World"
+print(text.upper())
+print(text.lower())
+print(text.title()) 
+print(text.capitalize())
+print("")
+
+#strip whitespace
+text1 = "   Hello World   "
+print(text1.strip())
+print(text1.lstrip())
+print(text1.rstrip())
+
+#search in string
+print(text.find("World"))
+print('World' in text)
+print(text.count("l"))
+
+#replace
+print(text.replace("World","Universe"))
+
+#split and join
+text2 = "Hello,World,22,Python"
+csv1 = text2.split(",")
+csv2 =text2.split("l")
+print(csv1[1])
+print(csv2)
+rejoined_text = "|".join(csv1)
+rejoined_text2 = " ".join(csv2)
+print(rejoined_text)
+print(rejoined_text2)
+
+#check content
+print('hello123'.isalnum())
+print('hello'.isalpha())
+print('he123'.isalpha())
+print('123'.isdigit())
+print('h123'.isdigit())
+print('divy'.isspace())
+print('  '.isspace())
+
+#start /end check
+email = 'user@gmail.com'
+print(email.startswith('user'))
+print(email.endswith('.com'))
+
+#assignment expression
+name ,marks,rank = 'diivy',92.567,2
+
+#f string
+print(f"my name is {name} and my marks are {marks} and my rankis {rank}")
+
+#format number
+print(f'marks:{marks:.2f}')
+print(f'marks:{marks:.0f}')
+print(f'count:{10000000:,}')
+
+#padding and alignment
+print(f'|{name:>20}|') #right align
+print(f'|{name:<20}|') #left align
+print(f'|{name:^20}|') #center align
+print(f'|{name:*^20}|') 
+print(f'{name:<15}|{marks:>10.2f}| Rank:{rank}') #combine padding and formatting
+
+#expression inside {}
+price,gst = 500 ,0.18
+print(f'Price:Rs {price} , GST:Rs {gst} , Total:Rs {price*(1+gst):.2f}')

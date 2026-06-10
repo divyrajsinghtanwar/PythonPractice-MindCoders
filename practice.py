@@ -198,7 +198,7 @@ while True:
 
 
 
-print("Election result is",election)        '''
+print("Election result is",election)        
 
 
 employee = {
@@ -219,3 +219,20 @@ while True :
         break 
 print(employee)
 
+'''
+
+string = "Hello ,how are you doing today ?"
+vowel = ['a','e','i','o','u']
+count = 0
+lower_string = string.lower()
+
+for i in lower_string:
+    if i in vowel:
+        count += 1
+
+print(f"Total vowels: {count}")
+
+print(string[15:18])
+
+print(string[::-1])
+            
