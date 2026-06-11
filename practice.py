@@ -219,7 +219,7 @@ while True :
         break 
 print(employee)
 
-'''
+
 
 string = "Hello ,how are you doing today ?"
 vowel = ['a','e','i','o','u']
@@ -235,4 +235,29 @@ print(f"Total vowels: {count}")
 print(string[15:18])
 
 print(string[::-1])
+
             
+'''
+
+import csv 
+records = [
+    ['Name','age','marks1','marks2','marks3'],
+    ['Rahul Sharma',20,75,80,85],
+    ['harshraj singh tanwer',21,95,90,92],
+    ['abhishek Thhakur',22,85,88,90],
+    ['Harshit Buawde',23,85,87,89]
+]
+
+with open("CLI.csv","w",newline='') as f:
+    csv.writer(f).writerows(records)
+
+student = input("enter student name : ")
+found = False
+with open("CLI.csv","r") as f:
+    for row in csv.DictReader(f):
+        if row['Name'] == student:
+            print(f'{row['Name']}  age :{row['age']} marks1:{row['marks1']} marks2:{row['marks2']} marks3: {row['marks3']}')  
+            found=True
+            break
+    if not found:
+        print("Not Found")     
