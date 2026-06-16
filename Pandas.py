@@ -23,7 +23,7 @@ print(df.dtypes)
 print("-"*20)
 
 print(df.describe())
-'''
+
 
 #select columns 
 print("df['Name']:\n",df['Name'])
@@ -56,14 +56,19 @@ print("-"*20)
 #GroupBy - like excel pivot
 city_avg  = df.groupby('City')['Marks'].mean()
 print(city_avg)
-
+'''
 #Read real csv file
 df2 = pd.read_csv('students.csv')
 
 df2['Name']=df2['Name'].str.strip()
 df2['Marks'] = df2['Marks'].str.replace('#','')
-df2['City'] = df2['City'].str.strip()
 
+
+Nationaliity = ["Capital","junction","District"]
+
+for  i in df2['City']:
+    for j in i: 
+        df2['City'] = df2['City'].replace(Nationaliity,"")
 
 
 df2.to_csv('clean_output.csv',index=False)  #save 
