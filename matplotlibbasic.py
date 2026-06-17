@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-'''
 months = ['Jan','Feb','Mar','Apr','May','Jun','July','Aug','sep','Oct','Nov','Dec']
 sales = [45,52,48,61,58,72,69,75,68,82,90,95]
 
@@ -27,8 +26,6 @@ for bar,val in zip(bars,students):
 plt.tight_layout()
 plt.show()    
 
-
-'''
 
 import numpy as np 
 study_hrs = np.random.uniform(2,10,50)
