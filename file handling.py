@@ -43,3 +43,5 @@ with open("students.csv","w",newline='') as f:
 with open("students.csv","r") as f:
     for row in csv.DictReader(f):
         print(f"Name: {row['Name']},  {row['Marks']} marks, ({row['City']})")    
+
+        

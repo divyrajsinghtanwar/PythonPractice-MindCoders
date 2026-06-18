@@ -62,13 +62,7 @@ df2 = pd.read_csv('students.csv')
 
 df2['Name']=df2['Name'].str.strip()
 df2['Marks'] = df2['Marks'].str.replace('#','')
+df2['City']  = df2['City'].str.strip().str.split().str[0]
 
 
-Nationaliity = ["Capital","junction","District"]
-
-for  i in df2['City']:
-    for j in i: 
-        df2['City'] = df2['City'].replace(Nationaliity,"")
-
-
-df2.to_csv('clean_output.csv',index=False)  #save 
+df2.to_csv("clean_output.csv")
